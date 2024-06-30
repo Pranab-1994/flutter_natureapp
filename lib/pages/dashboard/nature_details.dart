@@ -33,7 +33,9 @@ class NatureDetails extends StatelessWidget {
               buildHeaderDetails2(
                 natureName: "Nature Wonders Place-1",
               ),
-              buildImagePortion1(natureImg: "assets/images/nature1.png"),
+              buildImagePortion1(
+                natureImg: "assets/images/nature2.png",
+              ),
               const SizedBox(
                 height: 15,
               ),
@@ -44,7 +46,32 @@ class NatureDetails extends StatelessWidget {
               buildHeaderDetails2(
                 natureName: "Nature Wonders Place-2",
               ),
-              buildImagePortion1(natureImg: "assets/images/nature2.png"),
+              buildImagePortion1(
+                natureImg: "assets/images/nature1.png",
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              buildHeaderDetails(
+                headTitle:
+                    "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+              ),
+              buildHeaderDetails2(
+                natureName: "Nature Wonders Place-3",
+              ),
+              buildImagePortion1(
+                natureImg: "assets/images/nature3.png",
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              buildHeaderDetails(
+                headTitle:
+                    "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+              ),
+              const SizedBox(
+                height: 60,
+              ),
             ],
           ),
         ),
