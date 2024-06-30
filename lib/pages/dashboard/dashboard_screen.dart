@@ -1,14 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:nature_app/constants/mock_datas.dart';
+import 'package:nature_app/pages/dashboard/nature_details.dart';
 
-class DashboardScreen extends StatelessWidget {
+class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
+
+  @override
+  State<DashboardScreen> createState() => _DashboardScreenState();
+}
+
+class _DashboardScreenState extends State<DashboardScreen> {
+  onNatureTap(natureData) {
+    print('hi=> $natureData');
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => NatureDetails(title: natureData)),
+    );
+    // Navigator.push(
+    //   context,
+    //   MaterialPageRoute(builder: (context) => const NatureDetails()),
+    // );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Awesome'),
-      // ),
       body: Container(
         margin: const EdgeInsets.only(
           top: 50,
@@ -78,93 +93,44 @@ class DashboardScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 175,
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 40, horizontal: 20),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xFF8E8FFA),
-                          ),
-                          child: const Text(
-                            "Natural Wonders",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                          ),
+                    SizedBox(
+                      height: 250,
+                      child: GridView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: natureList.length,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
+                          childAspectRatio: 1.75,
                         ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 175,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 40, horizontal: 20),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xFF8E8FFA),
-                          ),
-                          child: const Text(
-                            "Nightlife",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
+                        itemBuilder: (BuildContext context, int index) {
+                          return InkWell(
+                            onTap: () =>
+                                onNatureTap(natureList[index]['title']),
+                            child: Container(
+                              alignment: Alignment.center,
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 40,
+                                horizontal: 20,
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                color: natureList[index]['color'],
+                              ),
+                              child: Text(
+                                natureList[index]['title'],
+                                style: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 175,
-                          alignment: Alignment.center,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 40, horizontal: 20),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xFFC2D9FF),
-                          ),
-                          child: const Text(
-                            "Landmarks",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.center,
-                          width: 175,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 40, horizontal: 20),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: const Color(0xFFC2D9FF),
-                          ),
-                          child: const Text(
-                            "Cultural",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
-                      ],
+                          );
+                        },
+                      ),
                     ),
                     Container(
                       decoration: BoxDecoration(
