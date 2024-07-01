@@ -83,7 +83,6 @@ class NatureDetails extends StatelessWidget {
       Image.asset(natureImg);
 
   Widget buildHeaderDetails2({required String natureName}) {
-    print('data=> $natureName');
     return Container(
       margin: const EdgeInsets.only(top: 30, bottom: 15),
       alignment: Alignment.topLeft,

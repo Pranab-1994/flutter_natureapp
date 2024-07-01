@@ -3,7 +3,9 @@ import 'package:nature_app/constants/mock_datas.dart';
 import 'package:nature_app/pages/dashboard/dashboard_widgets/book_ride_button.dart';
 import 'package:nature_app/pages/dashboard/dashboard_widgets/dashboard_header.dart';
 import 'package:nature_app/pages/dashboard/dashboard_widgets/nature_list.dart';
+import 'package:nature_app/pages/dashboard/landmark_details.dart';
 import 'package:nature_app/pages/dashboard/nature_details.dart';
+import 'package:nature_app/pages/dashboard/nightlife_details.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -14,12 +16,30 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   onNatureTap(natureData) {
-    print('hi=> $natureData');
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => NatureDetails(title: natureData),
-      ),
-    );
+    print('natureDataName=> $natureData');
+    print('natureDataName-type=> ${natureData.runtimeType}');
+    if (natureData == "Natural Wonders") {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => NatureDetails(title: natureData),
+        ),
+      );
+    } else if (natureData == "Nightlife") {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => NightlifeDetails(title: natureData),
+        ),
+      );
+    } else if (natureData == "Landmarks") {
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => LandmarkDetails(title: natureData),
+        ),
+      );
+    } else {
+      return;
+    }
+
     // Navigator.push(
     //   context,
     //   MaterialPageRoute(builder: (context) => const NatureDetails()),

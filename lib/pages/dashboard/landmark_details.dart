@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class LandmarkDetails extends StatelessWidget {
-  const LandmarkDetails({super.key});
+  final String title;
+  const LandmarkDetails({required this.title, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Landmarks",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 32,
             color: Color(0xFF0029FF),

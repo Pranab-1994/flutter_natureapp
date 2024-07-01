@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NightlifeDetails extends StatelessWidget {
-  const NightlifeDetails({super.key});
+  final String title;
+  const NightlifeDetails({required this.title, super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Nightlife",
-          style: TextStyle(
+        title: Text(
+          title,
+          style: const TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 32,
             color: Color(0xFFFF9900),
