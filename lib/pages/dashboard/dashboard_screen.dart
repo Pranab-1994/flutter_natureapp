@@ -16,7 +16,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
   onNatureTap(natureData) {
     print('hi=> $natureData');
     Navigator.of(context).push(
-      MaterialPageRoute(builder: (context) => NatureDetails(title: natureData)),
+      MaterialPageRoute(
+        builder: (context) => NatureDetails(title: natureData),
+      ),
     );
     // Navigator.push(
     //   context,
@@ -61,7 +63,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         ),
                       ),
                     ),
-                    NatureList(onNatureTap: onNatureTap),
+                    NatureList(
+                      onNatureTap: onNatureTap,
+                      natureList: natureList,
+                    ),
                     const BookRideButton(),
                   ],
                 ),

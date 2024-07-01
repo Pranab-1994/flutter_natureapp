@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:nature_app/constants/mock_datas.dart';
 
 class NatureList extends StatelessWidget {
   final Function onNatureTap;
-  const NatureList({required this.onNatureTap, super.key});
+  final List<Map<String, dynamic>> natureList;
+  const NatureList({
+    required this.onNatureTap,
+    required this.natureList,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    print('natureList=> $natureList');
+    // return Text(natureList.elementAt(0)['title']);
+
     return SizedBox(
       height: 250,
       child: GridView.builder(
@@ -33,8 +40,9 @@ class NatureList extends StatelessWidget {
               ),
               child: Text(
                 natureList[index]['title'],
+                textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.yellow,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                 ),
