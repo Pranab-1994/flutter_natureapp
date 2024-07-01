@@ -60,6 +60,79 @@ class LandmarkDetails extends StatelessWidget {
                     "Lorem Ipsum text mate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
               ),
               const SizedBox(height: 60),
+
+              Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  Image.asset(
+                    "assets/images/land2.png",
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(top: 100),
+                    padding: const EdgeInsets.only(left: 20),
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Selected Place",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                        Text(
+                          "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              // Stack(
+              //   clipBehavior: Clip.none,
+              //   children: [
+              //     Image.asset(
+              //       "assets/images/land2.png",
+              //     ),
+              //     Container(
+              //       margin: const EdgeInsets.only(top: 100),
+              //       padding: const EdgeInsets.only(left: 20),
+              //       child: const Column(
+              //         crossAxisAlignment: CrossAxisAlignment.start,
+              //         children: [
+              //           Text(
+              //             "Selected Place",
+              //             style: TextStyle(
+              //               color: Colors.white,
+              //             ),
+              //           ),
+              //           Text(
+              //             "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+              //             style: TextStyle(
+              //               color: Colors.white,
+              //             ),
+              //           ),
+              //         ],
+              //       ),
+              //     ),
+              //   ],
+              // ),
+
+              // Container(
+              //   width: 700,
+              //   height: 500,
+              //   decoration: const BoxDecoration(
+              //     image: DecorationImage(
+              //       image: AssetImage('assets/images/land2.png'),
+              //     ),
+              //   ),
+              //   child: const Text(
+              //     "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+              //   ),
+              // ),
             ],
           ),
         ),
