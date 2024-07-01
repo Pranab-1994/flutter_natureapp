@@ -42,7 +42,7 @@ class NatureList extends StatelessWidget {
                 natureList[index]['title'],
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                  color: Colors.yellow,
+                  color: Colors.black,
                   fontWeight: FontWeight.w600,
                   fontSize: 16,
                 ),
