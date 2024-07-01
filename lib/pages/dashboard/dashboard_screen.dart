@@ -16,8 +16,6 @@ class DashboardScreen extends StatefulWidget {
 
 class _DashboardScreenState extends State<DashboardScreen> {
   onNatureTap(natureData) {
-    print('natureDataName=> $natureData');
-    print('natureDataName-type=> ${natureData.runtimeType}');
     if (natureData == "Natural Wonders") {
       Navigator.of(context).push(
         MaterialPageRoute(

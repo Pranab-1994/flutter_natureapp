@@ -26,16 +26,27 @@ class LandmarkDetails extends StatelessWidget {
                 headTitle:
                     "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
               ),
-              buildHeaderDetails2(
-                natureName: "Landmarks Place-1",
-              ),
-              buildImagePortion1(
-                natureImg: "assets/images/land1.png",
-              ),
-              const SizedBox(height: 15),
-              buildHeaderDetails(
-                headTitle:
-                    "Lorem Ipsum text mate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFCACACA).withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    buildHeaderDetails2(
+                      natureName: "Landmarks Place-1",
+                    ),
+                    buildImagePortion1(
+                      natureImg: "assets/images/land1.png",
+                    ),
+                    const SizedBox(height: 15),
+                    buildHeaderDetails(
+                      headTitle:
+                          "Lorem Ipsum text mate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                    ),
+                  ],
+                ),
               ),
               buildHeaderDetails2(
                 natureName: "Landmarks Place-2",
